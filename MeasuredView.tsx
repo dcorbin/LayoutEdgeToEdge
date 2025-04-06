@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import {Text, View} from 'react-native';
 import React, {useLayoutEffect, useRef, useState} from 'react';
 
@@ -17,7 +18,7 @@ export function MeasuredView(props: {label: string}) {
         pageY: number,
       ) => {
         setMeasure(
-          `measure: (${x}, ${y}) / ${width} x ${height}; \n  page=(${pageX}, ${pageY})`,
+          `(${x}, ${y}) / ${width} x ${height}; \n  page=(${pageX}, ${pageY})`,
         );
       },
     );
@@ -25,14 +26,14 @@ export function MeasuredView(props: {label: string}) {
   useLayoutEffect(() => {
     ref.current?.measureInWindow(
       (x: number, y: number, width: number, height: number) => {
-        setMeasureInWindow(`measure: (${x}, ${y}) / ${width} x ${height};})`);
+        setMeasureInWindow(`(${x}, ${y}) / ${width} x ${height};})`);
       },
     );
   }, []);
   return (
     <View
       ref={ref}
-      style={{margin: 20, width: '100%', flex: 1, backgroundColor: '#ffcccc'}}
+      style={{width: '100%', backgroundColor: '#ffcccc'}}
       onLayout={e => {
         setOnLayoutOutput(JSON.stringify(e.nativeEvent.layout));
       }}>

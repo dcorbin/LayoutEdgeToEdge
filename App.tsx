@@ -13,7 +13,12 @@ import {MeasuredView} from './MeasuredView.tsx';
 function App(): React.JSX.Element {
   return (
     <SafeAreaView
-      style={{width: '100%', height: '100%', backgroundColor: 'white'}}>
+      style={{
+        width: '100%',
+        height: '100%',
+        backgroundColor: '#cfc',
+        justifyContent: 'center',
+      }}>
       <MeasuredView label="Alpha" />
     </SafeAreaView>
   );
